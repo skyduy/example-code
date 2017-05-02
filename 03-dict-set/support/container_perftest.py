@@ -33,6 +33,7 @@ if {verbose}:
     print('  found: %10d' % found)
 '''
 
+
 def test(container_type, verbose):
     MAX_EXPONENT = 7
     for n in range(3, MAX_EXPONENT + 1):
@@ -43,7 +44,8 @@ def test(container_type, verbose):
         tt = timeit.repeat(stmt=test, setup=setup, repeat=5, number=1)
         print('|{:{}d}|{:f}'.format(size, MAX_EXPONENT + 1, min(tt)))
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     if '-v' in sys.argv:
         sys.argv.remove('-v')
         verbose = True
