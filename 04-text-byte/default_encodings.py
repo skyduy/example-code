@@ -1,4 +1,5 @@
-import sys, locale
+import sys  # NOQA
+import locale  # NOQA
 
 expressions = """
         locale.getpreferredencoding()

@@ -41,6 +41,7 @@ def shave_marks(txt):
     return unicodedata.normalize('NFC', shaved)  # <3>
 # END SHAVE_MARKS
 
+
 # BEGIN SHAVE_MARKS_LATIN
 def shave_marks_latin(txt):
     """Remove all diacritic marks from Latin base characters"""
@@ -57,6 +58,7 @@ def shave_marks_latin(txt):
     shaved = ''.join(keepers)
     return unicodedata.normalize('NFC', shaved)   # <5>
 # END SHAVE_MARKS_LATIN
+
 
 # BEGIN ASCIIZE
 single_map = str.maketrans("""‚ƒ„†ˆ‹‘’“”•–—˜›""",  # <1>
