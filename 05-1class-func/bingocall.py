@@ -17,8 +17,8 @@ True
 
 import random
 
-class BingoCage:
 
+class BingoCage:
     def __init__(self, items):
         self._items = list(items)  # <1>
         random.shuffle(self._items)  # <2>

@@ -19,6 +19,7 @@
 
 # BEGIN CLIP
 
+
 def clip(text, max_len=80):
     """Return text clipped at the last space before or after max_len
     """
