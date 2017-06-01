@@ -98,13 +98,14 @@ def large_order_promo(order):
 
 # BEGIN STRATEGY_BEST2
 
-promos = [globals()[name] for name in globals()  # <1>
-            if name.endswith('_promo')  # <2>
-            and name != 'best_promo']   # <3>
+
+promos = [globals()[name] for name in globals()
+          if name.endswith('_promo') and name != 'best_promo']
+
 
 def best_promo(order):
     """Select best discount available
     """
-    return max(promo(order) for promo in promos)  # <4>
+    return max(promo(order) for promo in promos)
 
 # END STRATEGY_BEST2

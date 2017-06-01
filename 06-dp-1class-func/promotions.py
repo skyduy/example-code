@@ -12,6 +12,7 @@ def bulk_item_promo(order):
             discount += item.total() * .1
     return discount
 
+
 def large_order_promo(order):
     """7% discount for orders with 10 or more distinct items"""
     distinct_items = {item.product for item in order.cart}

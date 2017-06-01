@@ -98,7 +98,9 @@ def large_order_promo(order):
 
 # BEGIN STRATEGY_BEST
 
+
 promos = [fidelity_promo, bulk_item_promo, large_order_promo]  # <1>
+
 
 def best_promo(order):  # <2>
     """Select best discount available
