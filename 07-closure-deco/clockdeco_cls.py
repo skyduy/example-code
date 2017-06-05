@@ -14,6 +14,7 @@ import time
 
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
+
 class clock:
 
     def __init__(self, fmt=DEFAULT_FMT):
@@ -30,6 +31,7 @@ class clock:
             print(self.fmt.format(**locals()))
             return _result
         return clocked
+
 
 if __name__ == '__main__':
 

@@ -77,16 +77,20 @@ class Order:  # the Context
 
 # BEGIN STRATEGY_BEST4
 
+
 promos = []  # <1>
+
 
 def promotion(promo_func):  # <2>
     promos.append(promo_func)
     return promo_func
 
+
 @promotion  # <3>
 def fidelity(order):
     """5% discount for customers with 1000 or more fidelity points"""
     return order.total() * .05 if order.customer.fidelity >= 1000 else 0
+
 
 @promotion
 def bulk_item(order):
@@ -97,6 +101,7 @@ def bulk_item(order):
             discount += item.total() * .1
     return discount
 
+
 @promotion
 def large_order(order):
     """7% discount for orders with 10 or more distinct items"""
@@ -104,6 +109,7 @@ def large_order(order):
     if len(distinct_items) >= 10:
         return order.total() * .07
     return 0
+
 
 def best_promo(order):  # <4>
     """Select best discount available
