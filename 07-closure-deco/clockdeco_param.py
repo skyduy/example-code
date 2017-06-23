@@ -14,9 +14,10 @@ import time
 
 DEFAULT_FMT = '[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
-def clock(fmt=DEFAULT_FMT):  # <1>
-    def decorate(func):      # <2>
-        def clocked(*_args): # <3>
+
+def clock(fmt=DEFAULT_FMT):   # <1>
+    def decorate(func):       # <2>
+        def clocked(*_args):  # <3>
             t0 = time.time()
             _result = func(*_args)  # <4>
             elapsed = time.time() - t0
@@ -28,8 +29,8 @@ def clock(fmt=DEFAULT_FMT):  # <1>
         return clocked  # <9>
     return decorate  # <10>
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     @clock()  # <11>
     def snooze(seconds):
         time.sleep(seconds)
