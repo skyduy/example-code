@@ -17,6 +17,7 @@
 []
 """
 
+
 # BEGIN CHEESE_CLASS
 class Cheese:
 

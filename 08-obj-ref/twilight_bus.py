@@ -7,6 +7,7 @@
 ['Sue', 'Maya', 'Diana']
 """
 
+
 # BEGIN TWILIGHT_BUS_CLASS
 class TwilightBus:
     """A bus model that makes passengers vanish"""
@@ -15,7 +16,7 @@ class TwilightBus:
         if passengers is None:
             self.passengers = []  # <1>
         else:
-            self.passengers = passengers  #<2>
+            self.passengers = passengers  # <2>
 
     def pick(self, name):
         self.passengers.append(name)
@@ -23,4 +24,3 @@ class TwilightBus:
     def drop(self, name):
         self.passengers.remove(name)  # <3>
 # END TWILIGHT_BUS_CLASS
-
