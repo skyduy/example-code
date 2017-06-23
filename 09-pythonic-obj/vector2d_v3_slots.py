@@ -90,6 +90,7 @@ Tests of hashing:
 from array import array
 import math
 
+
 # BEGIN VECTOR2D_V3_SLOTS
 class Vector2d:
     __slots__ = ('__x', '__y')

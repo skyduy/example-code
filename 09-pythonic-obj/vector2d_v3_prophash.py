@@ -93,6 +93,7 @@ Tests of hashing:
 from array import array
 import math
 
+
 # BEGIN VECTOR2D_V3_PROP
 class Vector2d:
     typecode = 'd'
