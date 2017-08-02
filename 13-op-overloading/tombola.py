@@ -2,6 +2,7 @@
 
 import abc
 
+
 class Tombola(abc.ABC):  # <1>
 
     @abc.abstractmethod
@@ -18,7 +19,6 @@ class Tombola(abc.ABC):  # <1>
     def loaded(self):  # <4>
         """Return `True` if there's at least 1 item, `False` otherwise."""
         return bool(self.inspect())  # <5>
-
 
     def inspect(self):
         """Return a sorted tuple with the items currently inside."""

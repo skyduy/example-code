@@ -53,8 +53,6 @@ Tests for __iadd__:
 """
 
 # BEGIN ADDABLE_BINGO
-import itertools  # <1>
-
 from tombola import Tombola
 from bingo import BingoCage
 
@@ -79,8 +77,6 @@ class AddableBingoCage(BingoCage):  # <2>
                 raise TypeError(msg.format(self_cls))
         self.load(other_iterable)  # <7>
         return self  # <8>
-
-
 
 
 # END ADDABLE_BINGO
