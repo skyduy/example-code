@@ -40,5 +40,6 @@ def main():
     else:
         warnings.warn('last word is #%d, "%s"' % (n, word))
 
+
 if __name__ == '__main__':
     main()

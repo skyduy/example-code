@@ -5,6 +5,7 @@ yielding.
 
 """
 
+
 # BEGIN YIELD_DELEGATE_FIX
 def f():
     def do_yield(n):
@@ -15,10 +16,10 @@ def f():
         yield from do_yield(x)
 # END YIELD_DELEGATE_FIX
 
+
 if __name__ == '__main__':
     print('Invoking f() now produces a generator')
     g = f()
     print(next(g))
     print(next(g))
     print(next(g))
-

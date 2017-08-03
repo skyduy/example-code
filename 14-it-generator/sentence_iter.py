@@ -43,6 +43,7 @@ class SentenceIterator:
         return self
 # END SENTENCE_ITER
 
+
 def main():
     import sys
     import warnings
@@ -60,6 +61,7 @@ def main():
             break
     else:
         warnings.warn('last word is #%d, "%s"' % (n, word))
+
 
 if __name__ == '__main__':
     main()
