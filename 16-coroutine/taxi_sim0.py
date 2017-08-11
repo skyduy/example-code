@@ -27,7 +27,6 @@ See explanation and longer sample run at the end of this module.
 
 """
 
-import sys
 import random
 import collections
 import queue
@@ -46,6 +45,7 @@ def compute_delay(interval):
     """Compute action delay using exponential distribution"""
     return int(random.expovariate(1/interval)) + 1
 
+
 # BEGIN TAXI_PROCESS
 def taxi_process(ident, trips, start_time=0):  # <1>
     """Yield to simulator issuing event at each state change"""
@@ -61,13 +61,13 @@ def taxi_process(ident, trips, start_time=0):  # <1>
     # end of taxi process # <9>
 # END TAXI_PROCESS
 
+
 # BEGIN TAXI_SIMULATOR
 class Simulator:
 
     def __init__(self, procs_map):
         self.events = queue.PriorityQueue()
         self.procs = dict(procs_map)
-
 
     def run(self, end_time):  # <1>
         """Schedule and display events until time is up"""
@@ -101,6 +101,7 @@ class Simulator:
             msg = '*** end of simulation time: {} events pending ***'
             print(msg.format(self.events.qsize()))
 # END TAXI_SIMULATOR
+
 
 def main(end_time=DEFAULT_END_TIME, num_taxis=DEFAULT_NUMBER_OF_TAXIS,
          seed=None):

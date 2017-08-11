@@ -49,9 +49,11 @@ Coroutine not handling exception::
 # END DEMO_CORO_EXC_3
 """
 
+
 # BEGIN EX_CORO_EXC
 class DemoException(Exception):
     """An exception type for the demonstration."""
+
 
 def demo_exc_handling():
     print('-> coroutine started')

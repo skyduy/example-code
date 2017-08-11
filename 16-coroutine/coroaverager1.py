@@ -17,6 +17,7 @@ A coroutine to compute a running average
 
 from coroutil import coroutine  # <4>
 
+
 @coroutine  # <5>
 def averager():  # <6>
     total = 0.0

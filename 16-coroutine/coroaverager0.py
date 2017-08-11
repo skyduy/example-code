@@ -15,6 +15,7 @@ A coroutine to compute a running average
 
 """
 
+
 # BEGIN CORO_AVERAGER
 def averager():
     total = 0.0
