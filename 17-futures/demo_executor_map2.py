@@ -22,8 +22,8 @@ def loiter(n):  # <2>
 
 def main():
     display('Script starting.')
-    executor = futures.ThreadPoolExecutor(max_workers=3)  # <4>
-    results = executor.map(loiter, range(5))  # <5>
+    with futures.ThreadPoolExecutor(max_workers=3) as executor:  # <4>
+        results = executor.map(loiter, range(5))  # <5>
     display('results:', results)  # <6>.
     display('Waiting for individual results:')
     for i, result in enumerate(results):  # <7>

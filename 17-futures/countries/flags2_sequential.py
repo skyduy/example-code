@@ -26,6 +26,7 @@ from flags2_common import main, save_flag, HTTPStatus, Result
 DEFAULT_CONCUR_REQ = 1
 MAX_CONCUR_REQ = 1
 
+
 # BEGIN FLAGS2_BASIC_HTTP_FUNCTIONS
 def get_flag(base_url, cc):
     url = '{}/{cc}/{cc}.gif'.format(base_url, cc=cc.lower())
@@ -56,6 +57,7 @@ def download_one(cc, base_url, verbose=False):
     return Result(status, cc)  # <6>
 # END FLAGS2_BASIC_HTTP_FUNCTIONS
 
+
 # BEGIN FLAGS2_DOWNLOAD_MANY_SEQUENTIAL
 def download_many(cc_list, base_url, verbose, max_req):
     counter = collections.Counter()  # <1>
@@ -77,11 +79,12 @@ def download_many(cc_list, base_url, verbose, max_req):
         if error_msg:
             status = HTTPStatus.error  # <9>
         counter[status] += 1  # <10>
-        if verbose and error_msg: # <11>
+        if verbose and error_msg:  # <11>
             print('*** Error for {}: {}'.format(cc, error_msg))
 
     return counter  # <12>
 # END FLAGS2_DOWNLOAD_MANY_SEQUENTIAL
+
 
 if __name__ == '__main__':
     main(download_many, DEFAULT_CONCUR_REQ, MAX_CONCUR_REQ)

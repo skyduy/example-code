@@ -53,7 +53,7 @@ def download_many(cc_list, base_url, verbose, concur_req):
         to_do_map = {}
         for cc in sorted(cc_list):
             future = executor.submit(download_one,
-                            cc, base_url, verbose)
+                                     cc, base_url, verbose)
             to_do_map[future] = cc
         to_do_iter = futures.as_completed(to_do_map)
         if not verbose:

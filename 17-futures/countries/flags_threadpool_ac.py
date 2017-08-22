@@ -44,12 +44,12 @@ def download_many(cc_list):
         for future in futures.as_completed(to_do):  # <7>
             res = future.result()  # <8>
             msg = '{} result: {!r}'
-            print(msg.format(future, res)) # <9>
+            print(msg.format(future, res))  # <9>
             results.append(res)
 
     return len(results)
 # END FLAGS_THREADPOOL_AS_COMPLETED
 
+
 if __name__ == '__main__':
     main(download_many)
-
