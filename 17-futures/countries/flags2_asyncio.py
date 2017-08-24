@@ -38,7 +38,7 @@ class FetchError(Exception):  # <1>
 
 
 @asyncio.coroutine
-def get_flag(base_url, cc): # <2>
+def get_flag(base_url, cc):  # <2>
     url = '{}/{cc}/{cc}.gif'.format(base_url, cc=cc.lower())
     resp = yield from aiohttp.request('GET', url)
     with contextlib.closing(resp):
@@ -73,6 +73,7 @@ def download_one(cc, base_url, semaphore, verbose):  # <3>
 
     return Result(status, cc)
 # END FLAGS2_ASYNCIO_TOP
+
 
 # BEGIN FLAGS2_ASYNCIO_DOWNLOAD_MANY
 @asyncio.coroutine
