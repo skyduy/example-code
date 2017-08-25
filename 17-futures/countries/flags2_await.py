@@ -25,7 +25,7 @@ class FetchError(Exception):  # <1>
         self.country_code = country_code
 
 
-async def get_flag(base_url, cc): # <2>
+async def get_flag(base_url, cc):  # <2>
     url = '{}/{cc}/{cc}.gif'.format(base_url, cc=cc.lower())
     with closing(await aiohttp.request('GET', url)) as resp:
         if resp.status == 200:
@@ -58,6 +58,7 @@ async def download_one(cc, base_url, semaphore, verbose):  # <3>
 
     return Result(status, cc)
 # END FLAGS2_ASYNCIO_TOP
+
 
 # BEGIN FLAGS2_ASYNCIO_DOWNLOAD_MANY
 async def downloader_coro(cc_list, base_url, verbose, concur_req):  # <1>

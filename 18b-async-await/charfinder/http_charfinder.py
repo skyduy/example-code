@@ -23,6 +23,7 @@ with open(TEMPLATE_NAME) as tpl:
     template = tpl.read()
 template = template.replace('{links}', LINKS_HTML)
 
+
 # BEGIN HTTP_CHARFINDER_HOME
 def home(request):  # <1>
     query = request.GET.get('query', '').strip()  # <2>
@@ -40,7 +41,7 @@ def home(request):  # <1>
     html = template.format(query=query, result=res,  # <5>
                            message=msg)
     print('Sending {} results'.format(len(descriptions)))  # <6>
-    return web.Response(content_type=CONTENT_TYPE, text=html) # <7>
+    return web.Response(content_type=CONTENT_TYPE, text=html)  # <7>
 # END HTTP_CHARFINDER_HOME
 
 
@@ -50,8 +51,9 @@ async def init(loop, address, port):  # <1>
     app.router.add_route('GET', '/', home)  # <3>
     handler = app.make_handler()  # <4>
     server = await loop.create_server(handler,
-                                           address, port)  # <5>
+                                      address, port)  # <5>
     return server.sockets[0].getsockname()  # <6>
+
 
 def main(address="127.0.0.1", port=8888):
     port = int(port)
