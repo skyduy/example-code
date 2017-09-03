@@ -5,6 +5,7 @@ def object_maker(the_class, some_arg):
         the_class.__init__(new_object, some_arg)
     return new_object
 
+
 # the following statements are roughly equivalent
-x = Foo('bar')
-x = object_maker(Foo, 'bar')
+x = Foo('bar')  # NOQA
+x = object_maker(Foo, 'bar')  # NOQA

@@ -9,6 +9,7 @@ Example of property documentation
     'The bar attribute'
 """
 
+
 # BEGIN DOC_PROPERTY
 class Foo:
 

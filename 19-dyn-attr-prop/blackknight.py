@@ -25,6 +25,7 @@ refuses to concede defeat.
 # END BLACK_KNIGHT_DEMO
 """
 
+
 # BEGIN BLACK_KNIGHT
 class BlackKnight:
 
