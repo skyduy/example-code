@@ -75,4 +75,3 @@ class FrozenJSON:
             return [cls.build(item) for item in obj]
         else:  # <8>
             return obj
-
