@@ -112,4 +112,3 @@ def test_find_with_start_stop(sample_index):
     res = [(ord(char), name(char))
            for char in sample_index.find_chars('sign', 1, 2).items]
     assert res == [(8352, 'EURO-CURRENCY SIGN')]
-

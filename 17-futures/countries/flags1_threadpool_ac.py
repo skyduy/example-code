@@ -4,7 +4,7 @@ ThreadPoolExecutor version 2, with ``as_completed``.
 
 Sample run::
 
-    $ python3 flags_threadpool.py
+    $ python3 flags1_threadpool_ac.py
     BD retrieved.
     EG retrieved.
     CN retrieved.

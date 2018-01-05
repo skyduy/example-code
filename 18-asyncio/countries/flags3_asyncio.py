@@ -1,4 +1,5 @@
-"""Download flags and names of countries.
+"""
+Download flags and names of countries.
 
 asyncio version
 """
@@ -21,6 +22,7 @@ MAX_CONCUR_REQ = 1000
 class FetchError(Exception):
     def __init__(self, country_code):
         self.country_code = country_code
+
 
 # BEGIN FLAGS3_ASYNCIO
 @asyncio.coroutine
@@ -52,13 +54,13 @@ def get_country(base_url, cc):
 @asyncio.coroutine
 def get_flag(base_url, cc):
     url = '{}/{cc}/{cc}.gif'.format(base_url, cc=cc.lower())
-    return (yield from http_get(url)) # <4>
+    return (yield from http_get(url))  # <4>
 
 
 @asyncio.coroutine
 def download_one(cc, base_url, semaphore, verbose):
     try:
-        with (yield from semaphore): # <5>
+        with (yield from semaphore):  # <5>
             image = yield from get_flag(base_url, cc)
         with (yield from semaphore):
             country = yield from get_country(base_url, cc)
@@ -80,6 +82,7 @@ def download_one(cc, base_url, semaphore, verbose):
 
     return Result(status, cc)
 # END FLAGS3_ASYNCIO
+
 
 @asyncio.coroutine
 def downloader_coro(cc_list, base_url, verbose, concur_req):

@@ -4,7 +4,7 @@ ThreadPoolExecutor version
 
 Sample run::
 
-    $ python3 flags_threadpool.py
+    $ python3 flags1_threadpool.py
     BD retrieved.
     EG retrieved.
     CN retrieved.

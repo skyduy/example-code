@@ -1,10 +1,11 @@
-"""Download flags of top 20 countries by population
+"""
+Download flags of top 20 countries by population
 
 asyncio + aiottp version
 
 Sample run::
 
-    $ python3 flags_asyncio.py
+    $ python3 flags1_asyncio.py
     EG VN IN TR RU ID US DE CN MX JP BD NG ET FR BR PH PK CD IR
     20 flags downloaded in 1.07s
 

@@ -4,7 +4,7 @@ Sequential version
 
 Sample run::
 
-    $ python3 flags.py
+    $ python3 flags1_common.py
     BD BR CD CN DE EG ET FR ID IN IR JP MX NG PH PK RU TR US VN
     20 flags downloaded in 10.16s
 
